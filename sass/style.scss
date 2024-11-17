@@ -1,7 +1,7 @@
 $fa-font-path: '/webfonts';
 
 :root {
-    --font-family: Helvetica, Roboto, sans-serif;    
+    --font-family: Helvetica, Roboto, sans-serif;
 }
 
 // importing core styling file
@@ -15,16 +15,23 @@ body {
     font: 100% var(--font-family);
 }
 
-a:visited {
+a {
     color: inherit;
 }
 
 .container {
     margin: auto;
-    width: 50%;
+    width: 100%;
 }
 
-.navigation, .social-media {
+@media only screen and (min-width: 768px) {
+    .container {
+        width: 50%;
+    } 
+}
+
+.navigation,
+.social-media {
     list-style-type: none;
     margin: 0;
     padding: 0;
