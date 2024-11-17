@@ -12,10 +12,16 @@
     <section class="section">
         <div class="container">
             <h1 class="title">{{ config.title }}</h1>
+            {% macro current_nav(name) %}
+                {% if section is defined %}
+                    {% set title = section.title | default(value="") %}
+                    {% if title == name %}class="current"{% endif %}
+                {% endif %}
+            {% endmacro input %}
             <ul class="navigation">
-                <li><a href="/">/home</a></li>
-                <li><a href="{{ get_url(path='@/posts/_index.md')  }}">/posts</a></li>
-                <li><a href="{{ get_url(path='@/projects/_index.md')  }}">/projects</a></li>
+                <li><a href="/" {{ self::current_nav(name="") }}>/home</a></li>
+                <li><a href="/posts" {{ self::current_nav(name="posts") }}>/posts</a></li>
+                <li><a href="/projects" {{ self::current_nav(name="projects") }}>/projects</a></li>
             </ul>
             {% block content %} {% endblock %}
         </div>

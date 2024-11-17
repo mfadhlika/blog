@@ -41,6 +41,16 @@ a {
     }
 }
 
+.navigation {
+    a {
+        color: gray;
+
+        &.current {
+            color: initial;
+        }
+    }
+}
+
 .social-media {
     font-size: x-large;
 
