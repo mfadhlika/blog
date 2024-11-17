@@ -1,0 +1,43 @@
+$fa-font-path: '/webfonts';
+
+:root {
+    --font-family: Helvetica, Roboto, sans-serif;    
+}
+
+// importing core styling file
+@import './assets/fontawesome/scss/fontawesome.scss';
+
+// our project needs Solid + Brands
+@import './assets/fontawesome/scss/solid.scss';
+@import './assets/fontawesome/scss/brands.scss';
+
+body {
+    font: 100% var(--font-family);
+}
+
+a:visited {
+    color: inherit;
+}
+
+.container {
+    margin: auto;
+    width: 50%;
+}
+
+.navigation, .social-media {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        display: inline;
+    }
+}
+
+.social-media {
+    font-size: x-large;
+
+    li {
+        margin-right: 0.5rem;
+    }
+}
