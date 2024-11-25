@@ -7,7 +7,7 @@
     <title>
         {% if page is defined %}
             {{ page.title }} | {{ config.title }}
-        {% elif section is defined %}
+        {% elif section is defined and section.title %}
             {{ section.title}} | {{ config.title }}
         {% else %}
             {{ config.title }}
