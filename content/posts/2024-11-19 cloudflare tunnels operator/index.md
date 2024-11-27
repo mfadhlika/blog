@@ -2,7 +2,7 @@
 title = "Write a Kubernetes Controller in Rust"
 description = "Exposing kubernetes services to public internet with Cloudflare Tunnel using Kubernetes Operator and Ingress Resources"
 date = 2024-11-19
-updated = 2024-11-21
+updated = 2024-11-27
 +++
 
 I have many hobbies, homelab is one of them. Like many other homelabber, almost all of the time I use VPN to access services in my home. But, there's always some services we want to expose to public internet, may it be for convinience or necessity. In fact this very website is hosted on my homelab using Cloudflare Tunnel, the other use case is I need to expose my home dns server so I can access my services via domain when I'm outside my home network. Sure, I can set dns server in my VPN configuration like this,
@@ -20,11 +20,11 @@ AllowedIPs = 192.168.0.0/24
 ```
 *A section of Wireguard configuration*
 
-But there is a problem with this configuration. Since every dns request need to go through the VPN, the Wireguard app will be activated for every network calls the OS makes thus draining the battery, this is not a problem on Computer or Laptop but my iPhone is the primary device I use when I was outside. After searching through the internet for a solution, I stumble on a reddit post that says they left dns in wireguard config empty and use DNS-Over-HTTPS over public internet.
+But there is a problem with this configuration. Since every dns request need to go through VPN tunnel, the Wireguard app will be activated for every network calls the OS makes even on sleep thus draining the battery, this is not a problem on Computer or Laptop but my iPhone is the primary device I use when I was outside. After searching through the internet for a solution, I stumble on a reddit post that says they left dns in wireguard config empty and use DNS-Over-HTTPS over public internet.
 
 ## Cloudflare Tunnel
 
-Cloudflare Tunnel is a tunneling solution from Cloudflare that creates encrypted tunnel between a origin web server and cloudflare data center without opening any inbound public ports, thus also hiding my home public IP. Cloudflare Tunnel is not the only solution for tunneling, the most popular one is ngrok, but Cloudflare Tunnel is the only free production ready solution with caveat only HTTP(S) is supported without using WARP on client.
+Cloudflare Tunnel is a tunneling solution from Cloudflare that creates encrypted tunnel between a origin web server and cloudflare data center without opening any inbound public ports on your router or firewall, thus hiding my home public IP. Cloudflare Tunnel is not the only solution for tunneling, the most popular one is ngrok, but Cloudflare Tunnel is the only free production ready solution with caveat only HTTP(S) is supported without using WARP on client.
 
 Before decided to use Cloudflare Tunnel, I was exploring using [frp](https://github.com/fatedier/frp). There's is many cheap and good $5 VPS provider, and frp offers more features than Cloudflare Tunnel without install anything on client. Even after I've developed the kubernetes controller, I decided to scrap it and switch to Cloudflare Tunnel because frp doesn't support path routing when using HTTPS.
 
@@ -36,7 +36,11 @@ There are many way to achieve the goal of exposing private service to public int
 2. Deploy `cloudflared` in kubernetes as deployments and write config manually.
 3. Write kubernetes operator to deploy `cloudflared` and automatically update config everytime an `Ingress` is applied.
 
-The first option is obviously the easiest one, you just install, configure, and run then forget about it until you need to make changes. The second has the advantage of declarative approach of kubernetes, but still pretty easy to do. The third one is of course the solution with most effort, but as a Software Engineer who use Kubernetes at work and home, I haven't write a Kubernetes Operator so I thought this is my chance to write one, also I can just declare a `Ingress` resource to expose a service and the operator will took care of it.
+The first option is obviously the easiest one, you just install, configure, and run then forget about it until you need to make changes. 
+
+The second has the advantage of declarative approach of kubernetes, but still pretty easy to do.
+
+The third one is of course the solution with most effort, but as a Software Engineer who use Kubernetes at work and home, I haven't write a Kubernetes Operator so I thought this is my chance to write one, also I can just declare a `Ingress` resource to expose a service and the operator will took care of it.
 
 ### Architecture
 
