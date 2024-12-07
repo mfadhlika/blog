@@ -2,6 +2,7 @@
 title = "Homelab"
 description = ""
 date = "2024-12-07"
+draft = true
 +++
 
 I've post about [write a kubernetes contoller](@/posts/2024-11-19_cloudflare-tunnels-operator/index.md) and said that I have a homelab. Now, I want to tell how I setup my homelab.
