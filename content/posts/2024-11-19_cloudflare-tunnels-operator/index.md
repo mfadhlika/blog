@@ -3,6 +3,9 @@ title = "Write a Kubernetes Controller in Rust"
 description = "Exposing kubernetes services to public internet with Cloudflare Tunnel using Kubernetes Operator and Ingress Resources"
 date = 2024-11-19
 updated = 2024-11-27
+aliases = [
+    "posts/2024-11-19-cloudflare-tunnels-operator"
+]
 +++
 
 I have many hobbies, homelab is one of them. Like many other homelabber, almost all of the time I use VPN to access services in my home. But, there's always some services we want to expose to public internet, may it be for convinience or necessity. In fact this very website is hosted on my homelab using Cloudflare Tunnel, the other use case is I need to expose my home dns server so I can access my services via domain when I'm outside my home network. Sure, I can set dns server in my VPN configuration like this,
