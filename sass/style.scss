@@ -53,6 +53,11 @@ pre {
     }
 }
 
+article > ul {
+    padding-left: 0;
+    list-style: inside;
+}
+
 .navigation,
 .social-media,
 .posts {
