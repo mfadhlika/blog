@@ -2,3 +2,8 @@
 name = "cloudflare-tunnels-operator"
 url = "https://github.com/mfadhlika/cloudflare-tunnels-operator"
 description = "A Kubernetes Operator for exposing service with Cloudflare Tunnels using Ingress resources"
+
+[[projects]]
+name = "lokasi"
+url = "https://github.com/mfadhlika/lokasi"
+description = "A self-hosted location tracker"
