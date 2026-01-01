@@ -4,6 +4,8 @@ description = "My favorite iOS feature and a reason why I'm using iOS"
 date = 2026-01-01
 +++
 
+![shortcuts](./shortcuts.png)
+
 Shortcuts is my favorite feature and a major reason why I'm using iOS instead of Android.
 
 ## Self-hosted companion
