@@ -18,9 +18,7 @@ Many small things in daily life don't have app and for good reason. Here in my c
 
 With Shortcuts, we can create a "mini-app" to simplify the order.
 
-<video width="640" controls>
-  <source src="ScreenRecording_01-01-2026%2012-08-09_1.mp4" type="video/mp4">
-</video>
+![ordering](./ScreenRecording_01-01-2026%2012-08-09_1.gif)
 
 Sure, above videos have multiple taps but it still has less steps, I can hardcode the value and it will be 1 tap anyway.
 
@@ -28,9 +26,11 @@ Sure, above videos have multiple taps but it still has less steps, I can hardcod
 
 When I was working from office, I constantly need to set my status to commute so collegue know I can't respond right away. Shortcuts have automation trigger when I leave or arrive at certain place, I can have automation that trigger every time I leave for work and set my status to commute and clear it when I'm arrive. The triggers are customizable of course, I can have manual trigger, WiFi status, Carplay connection, time of day and many more.
 
-<img height="480" src="IMG_5703.png" />
-<img height="480" src="IMG_5704.png" />
-<img height="480" src="IMG_5705.png" />
+<div style="display: flex;">
+  <img height="480" src="IMG_5703.png" />
+  <img height="480" src="IMG_5704.png" />
+  <img height="480" src="IMG_5705.png" />
+</div>
 
 The action my differ from platform to platform, for example my company back then use Discord so I can't really set the status automatically since Discord don't have API or Shortcuts actions, Slack provide an API but no Shortcuts actions so we can call the API on Shorcuts action similar to calling REST API for linkding.
 
