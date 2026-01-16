@@ -4,7 +4,7 @@
 <h1 class="title">
   {{ section.title }}
 </h1>
-<ul>
+<ul class="projects">
     {% set data = load_data(path="content/projects/projects.toml") %}
     {% for project in data.projects %}
     <li>
