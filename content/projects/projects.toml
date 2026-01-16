@@ -1,9 +1,9 @@
 [[projects]]
-name = "cloudflare-tunnels-operator"
+name = "Cloudflare Tunnels Operator"
 url = "https://github.com/mfadhlika/cloudflare-tunnels-operator"
 description = "A Kubernetes Operator for exposing service with Cloudflare Tunnels using Ingress resources"
 
 [[projects]]
-name = "lokasi"
-url = "https://github.com/mfadhlika/lokasi"
+name = "Kelana"
+url = "https://github.com/mfadhlika/kelana"
 description = "A self-hosted location tracker"
