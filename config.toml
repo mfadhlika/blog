@@ -1,12 +1,29 @@
 title = "Fadhlika"
 
+theme = "apollo"
+
 # The URL the site will be built for
 base_url = "https://fadhlika.com"
 
-# Whether to automatically compile all Sass files in the sass directory
-compile_sass = true
-
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
+[search]
+include_title = true
+include_description = true
+include_path = true
+include_content = true
+index_format = "elasticlunr_json"
 
 ignored_content = ["*.tldr"]
+
+[extra]
+theme = "auto"
+socials = [
+  { name = "github", url = "https://github.com/mfadhlika/", icon = "github" },
+  { name = "linkedin", url = "https://www.linkedin.com/in/fadhlika/", icon = "linkedin" },
+]
+menu = [
+  { name = "/posts", url = "/posts", weight = 1 },
+  { name = "/projects", url = "/projects", weight = 2 },
+]
+fancy_code = "true"
