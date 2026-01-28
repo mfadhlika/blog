@@ -16,6 +16,9 @@ index_format = "elasticlunr_json"
 
 ignored_content = ["*.tldr"]
 
+generate_feeds = true
+feed_filenames = ["rss.xml"]
+
 [extra]
 theme = "auto"
 socials = [
@@ -26,4 +29,4 @@ menu = [
   { name = "/posts", url = "/posts", weight = 1 },
   { name = "/projects", url = "/projects", weight = 2 },
 ]
-fancy_code = "true"
+fancy_code = true
