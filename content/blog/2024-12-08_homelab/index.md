@@ -4,7 +4,7 @@ description = "Physical server right at home"
 date = "2024-12-08"
 +++
 
-I've post about [write a kubernetes contoller](@/posts/2024-11-19_cloudflare-tunnels-operator/index.md) and stated that I have a homelab. Now in this post, I want to explain how I my homelab is configured.
+I've post about [write a kubernetes contoller](@/blog/2024-11-19_cloudflare-tunnels-operator/index.md) and stated that I have a homelab. Now in this post, I want to explain how I my homelab is configured.
 
 ## Hardware
 

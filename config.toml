@@ -1,32 +1,39 @@
-title = "Fadhlika"
+title = "__φ(◎◎ヘ) Fadhlika"
 
-theme = "apollo"
+theme = "zola-bearblog"
 
 # The URL the site will be built for
 base_url = "https://fadhlika.com"
-
-# Whether to build a search index to be used later on by a JavaScript library
-build_search_index = true
-[search]
-include_title = true
-include_description = true
-include_path = true
-include_content = true
-index_format = "elasticlunr_json"
 
 ignored_content = ["*.tldr"]
 
 generate_feeds = true
 feed_filenames = ["rss.xml"]
 
-[extra]
-theme = "auto"
-socials = [
-  { name = "github", url = "https://github.com/mfadhlika/", icon = "github" },
-  { name = "linkedin", url = "https://www.linkedin.com/in/fadhlika/", icon = "linkedin" },
+taxonomies = [
+  { name = "categories", feed = true },
+  { name = "tags", feed = true },
 ]
-menu = [
-  { name = "/posts", url = "/posts", weight = 1 },
-  { name = "/projects", url = "/projects", weight = 2 },
-]
-fancy_code = true
+
+default_language = "en"
+
+[translations]
+no_posts = "No posts yet"
+remove_filter = "Remove filter"
+filtering_for = "Filtering for"
+made_with = "Made with"
+table_of_contents = "Table of contents"
+language = "language"
+site = "site"
+
+[[extra.main_menu]]
+name = "Home"
+url = "@/_index.md"
+
+[[extra.main_menu]]
+name = "Projects"
+url = "@/projects.md"
+
+[[extra.main_menu]]
+name = "Blog"
+url = "@/blog/_index.md"
