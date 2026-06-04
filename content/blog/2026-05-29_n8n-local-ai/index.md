@@ -2,6 +2,7 @@
 title = "Personal Finance Automation and Self-hosted LLM"
 description = "My experience on using self-host LLM on n8n to automate tracking expense"
 date = 2026-05-29
+updated = 2026-06-04
 +++
 
 |![n8n](n8n.png)|![llama.cpp](llama-cpp.png)|![Actual](actual.png)|
@@ -55,7 +56,7 @@ There are a lot of hype for Gemma 4 and I want to see it for myself. Google rele
 
 ### Qwen 3.5
 
-Alibaba also released good small model with good tool calling support, there are 4 small variants: 0.8B, 2B, 4B, and 9B. In test execution enviroments using 4B variants, I don't really notice difference in performance/result with Gemma 4. After running Gemma 4:E4B variant for few days, I currently switching to Qwen3.5:4B to see if the model have similar failure rate as Gemma 4.
+Alibaba also released good small model with good tool calling support, there are 4 small variants: 0.8B, 2B, 4B, and 9B. In test execution enviroments using 4B variants, I don't really notice difference in performance/result with Gemma 4. After running Gemma 4:E4B variant for few days, I switched to Qwen3.5:4B to see the model results compared Gemma 4. Qwen3.5:4b almost always failed to properly extract the correct information, it often missing cents (since actual budget expect the amount in cents), wrong source of fund, or wrong payee. So, I switched back to Gemma 4.
 
 ## What's Next
 
